@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,5 +22,10 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        GryDataBase gryDataBase = Room.databaseBuilder(
+                getApplicationContext(), GryDataBase.class, "gry_db"
+        ).allowMainThreadQueries().build();
+
+        gryDataBase.zwrocGryDAO().wstawGreDoBazy(new Gra(18, 10, 2, "karciana", "UNO"));
     }
 }

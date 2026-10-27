@@ -1,10 +1,10 @@
 package com.lusia.bazydanych;
 
-import androidx.room3.Dao;
-import androidx.room3.Delete;
-import androidx.room3.Insert;
-import androidx.room3.Query;
-import androidx.room3.Update;
+import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
+import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 
@@ -25,6 +25,6 @@ public interface GraDAO {
     @Query("SELECT * FROM gry")
     public List<Gra> zwrocWszystkieGry();
 
-    @Query("SELECT nazwa FROM gry WHERE minimalnaLiczbaOsob = :ile")
+    @Query("SELECT nazwa FROM gry WHERE minimalniaLiczbaOsob = :ile")
     public List<String> zwrocNazwyGierDlaLiczbyOsob(int ile);
 }

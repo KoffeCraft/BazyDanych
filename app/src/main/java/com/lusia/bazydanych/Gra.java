@@ -1,7 +1,7 @@
 package com.lusia.bazydanych;
 
-import androidx.room3.Entity;
-import androidx.room3.PrimaryKey;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 @Entity(tableName = "gry")
 public class Gra {
@@ -12,6 +12,9 @@ public class Gra {
     public int minimalniaLiczbaOsob;
     public int maksLiczbaOsob;
     public int kategoriaWiekowa;
+
+    public Gra() {
+    }
 
     public Gra(int kategoriaWiekowa, int maksLiczbaOsob, int minimalniaLiczbaOsob, String kategoria, String nazwa) {
         this.kategoriaWiekowa = kategoriaWiekowa;
